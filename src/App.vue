@@ -1,28 +1,39 @@
+  
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <v-app>
+    <v-main class="container mt-10">
+      <h1 class="text-center primary--text mb-4">Recipe Assistant</h1>
+      <v-container>
+        <v-row>
+          <v-col cols="12" md="4">
+            <key-ingredients />
+          </v-col>
+          <v-col cols="12" md="4">
+            <diet-select />
+          </v-col>
+          <v-col cols="12" md="4">
+            <meal-type-select />
+          </v-col>
+        </v-row>
+        <v-row class="justify-center mt-10">
+          <v-btn color="primary" @click="getRandomRecipes">Find recipes</v-btn>
+        </v-row>
+        <recipe-results />
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
+import { mapActions } from "vuex";
+// import DietSelect from "./components/DietSelect.vue";
+import KeyIngredients from "./components/KeyIngredients.vue";
+// import MealTypeSelect from "./components/MealTypeSelect.vue";
+import RecipeResults from "./components/RecipeResults.vue";
 export default {
-  name: "App",
-  components: {
-    HelloWorld
+  components: { KeyIngredients, RecipeResults },
+  methods: {
+    ...mapActions(["getRandomRecipes"])
   }
 };
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
