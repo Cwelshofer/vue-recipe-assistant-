@@ -1,7 +1,8 @@
 <template>
   <v-row class="justify-center mt-10">
     <div v-for="recipe in searchResults" :key="recipe.id" class="ma-6">
-      <v-card width="350" class="mx-auto" height="100%">
+      <v-card width="350" class="mx-auto" height="100%" color="#385F73"
+            dark>
         <v-img :src="recipe.image" width="350"></v-img>
         <v-card-title class="recipe-name">{{ recipe.title }}</v-card-title>
 

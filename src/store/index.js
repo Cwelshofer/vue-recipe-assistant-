@@ -3,7 +3,7 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
-const apiURL = `https://api.spoonacular.com/recipes/random?number=3&apiKey=${process.env.VUE_APP_SPOONACULAR_KEY}`;
+const apiURL = `https://api.spoonacular.com/recipes/random?number=3&apiKey=6c1bf7004830432a96fd799caa760fb4`;
 
 export default new Vuex.Store({
   state: {
